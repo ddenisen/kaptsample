@@ -4,19 +4,16 @@ import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import butterknife.BindView
-import butterknife.ButterKnife
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    @BindView(R.id.main_label)
     lateinit var mainLabel: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ButterKnife.bind(this)
+        mainLabel = findViewById(R.id.main_label) as TextView
 
         val locales = listOf(
                 Locale.getDefault()
